@@ -1,0 +1,21 @@
+/**
+*
+* PinkAndYellow
+*
+* Styleguide/grouping order for css attributes:
+* - Content, position, display, float, clear, overflow, zoom
+* - Width, height, margin, padding
+* - Table, column, list
+* - Color, font, text, border, background, box-shadow, opacity
+* - Cursor, z-index, transform, transition, animation
+*/
+
+.PinkAndYellow {
+  margin-top:56px;
+  margin-left: (84px*3 + 19.67px*3);
+  position: absolute;
+  display: flex;
+  @media screen and (min-width: $break-large) {
+    margin-left: 0;
+  }
+}

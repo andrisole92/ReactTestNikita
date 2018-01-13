@@ -1,0 +1,54 @@
+/**
+*
+* Blue
+*
+* Styleguide/grouping order for css attributes:
+* - Content, position, display, float, clear, overflow, zoom
+* - Width, height, margin, padding
+* - Table, column, list
+* - Color, font, text, border, background, box-shadow, opacity
+* - Cursor, z-index, transform, transition, animation
+*/
+
+
+
+@mixin styling($height) {
+  .Blue {
+    background-color: blue;
+    position:relative;
+    width: 100vw;
+    height: $height;
+    @media screen and (min-width: $break-large) {
+      height: $height;
+    }
+
+    animation: fadein .5s;
+    animation-timing-function: ease-in;
+  }
+
+
+
+  .Blue.clicked {
+    animation: fadeOutBlue .5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+  }
+  @keyframes fadeOutBlue {
+    from { opacity: 1;}
+    to   { opacity: 0;}
+  }
+}
+
+
+@media screen and (min-width: $break-small) {
+  @include styling($height: 50vw);
+}
+@media screen and (min-width: $break-large) {
+  @include styling($height: 41.6vw);
+}
